@@ -97,10 +97,15 @@ class SignUpViewController: UIViewController {
         
         
         let params = [
+            "name": nameTxt,
             "email": emailTxt,
             "password": passwordTxt,
-            "name": nameTxt,
-            "c_password": c_passwordTxt
+            "c_password": c_passwordTxt,
+            "mobile_no": mobileNbTxt,
+            "latitude": "",
+            "longitude": "",
+            "user_image": "",
+            verification_code = invitionalCode
             ] as [String: Any]
         
         WebServiceManager.sharedInstance.loginRequest(params: params as Dictionary<String, AnyObject>, serviceName: REGISTER, serviceType: "REGISTER API", modelType: UserResponse.self, success: { (response) in
