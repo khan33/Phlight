@@ -984,7 +984,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" image="deliver_address" translatesAutoresizingMaskIntoConstraints="NO" id="kZw-3j-vWG">
                                 <rect key="frame" x="48.333333333333343" y="198" width="317.66666666666663" height="221"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K6S-sX-ffR" customClass="DesignableView" customModule="Phlight" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K6S-sX-ffR">
                                 <rect key="frame" x="35" y="454" width="344" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QF4-vC-Gx9">
@@ -1014,7 +1014,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWM-31-fq6" customClass="DesignableView" customModule="Phlight" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWM-31-fq6">
                                 <rect key="frame" x="35" y="528" width="164" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TP2-xg-RQs">
@@ -1044,7 +1044,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1JA-QI-hjo" customClass="DesignableView" customModule="Phlight" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1JA-QI-hjo">
                                 <rect key="frame" x="215" y="528" width="164" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Zip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oNZ-7b-hK8">
@@ -1075,7 +1075,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sTv-iB-bGS" customClass="DesignableView" customModule="Phlight" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sTv-iB-bGS">
                                 <rect key="frame" x="35" y="602" width="164" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L90-Z5-T4N">
@@ -1106,7 +1106,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8w-l5-tRe" customClass="DesignableView" customModule="Phlight" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8w-l5-tRe">
                                 <rect key="frame" x="215" y="602" width="164" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Zip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Np6-vk-InE">
@@ -1153,6 +1153,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onClickSaveBtn:" destination="jX5-6U-fRk" eventType="touchUpInside" id="fZw-QB-4Ry"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1742,6 +1745,9 @@ Sign Up!</string>
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onClickCancelBtn:" destination="d3H-QX-u2K" eventType="touchUpInside" id="o5U-Zp-Nej"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upload_photo" translatesAutoresizingMaskIntoConstraints="NO" id="dQ7-88-yJF">
                                         <rect key="frame" x="19.999999999999993" y="103" width="100.33333333333331" height="89"/>
@@ -1911,6 +1917,9 @@ Sign Up!</string>
                                         <state key="normal" title="Edit Photo">
                                             <color key="titleColor" red="0.035294117649999998" green="0.5568627451" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onClickPhotoBtn:" destination="d3H-QX-u2K" eventType="touchUpInside" id="X4V-hv-Sx3"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4S-bl-ZMV">
                                         <rect key="frame" x="318" y="24" width="80" height="44"/>
@@ -1928,6 +1937,9 @@ Sign Up!</string>
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onClickDoneBtn:" destination="d3H-QX-u2K" eventType="touchUpInside" id="IH8-ht-C2C"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1973,12 +1985,16 @@ Sign Up!</string>
                         <viewLayoutGuide key="safeArea" id="YHO-bQ-JYi"/>
                     </view>
                     <connections>
+                        <outlet property="editPhotoBtn" destination="3gO-J4-cKx" id="1md-Ff-Jx7"/>
+                        <outlet property="emailLbl" destination="C1r-5d-9Xv" id="RxO-Gj-mme"/>
                         <outlet property="emailTF" destination="20N-nm-uV9" id="Ct6-53-qHl"/>
                         <outlet property="emailView" destination="DrD-WM-iKM" id="uOk-ed-Vcw"/>
+                        <outlet property="imageView" destination="dQ7-88-yJF" id="fCI-Ka-uV8"/>
                         <outlet property="mobileNumberView" destination="Axc-MD-BeX" id="IzW-tS-RzU"/>
                         <outlet property="mobileTF" destination="36f-Af-Mam" id="5XS-LC-jSo"/>
                         <outlet property="nameTF" destination="itL-pg-Ugg" id="p1S-dI-ha6"/>
                         <outlet property="userNameView" destination="sqH-3J-4Fq" id="9R1-Pn-AbY"/>
+                        <outlet property="usernameLbl" destination="lM8-Pb-9c2" id="Lzw-mz-Ei1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fIo-Mm-lV1" userLabel="First Responder" sceneMemberID="firstResponder"/>

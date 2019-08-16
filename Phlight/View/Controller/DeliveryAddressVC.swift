@@ -10,6 +10,11 @@ import UIKit
 
 class DeliveryAddressVC: UIViewController {
 
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,14 +24,8 @@ class DeliveryAddressVC: UIViewController {
     @IBAction func onClickBackBtn(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func onClickSaveBtn(_ sender: Any) {
     }
-    */
-
+    
 }
