@@ -41,7 +41,7 @@ class UserDetails: Mappable {
         id              <- map["id"]
         name            <- map["id"]
         token           <- map["token"]
-        mobile_number   <- map["mobile_number"]
+        mobile_number   <- map["mobile_no"]
         email           <- map["email"]
         email_verified  <- map["email_verified"]
         phone_verified  <- map["phone_verified"]

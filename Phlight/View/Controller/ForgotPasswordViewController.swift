@@ -32,12 +32,9 @@ class ForgotPasswordViewController: UIViewController {
             "email": emailTxt
             ] as [String: Any]
         
-        WebServiceManager.sharedInstance.loginRequest(params: params as Dictionary<String, AnyObject>, serviceName: LOGIN, serviceType: "Login API", modelType: UserResponse.self, success: { (response) in
+        WebServiceManager.sharedInstance.loginRequest(params: params as Dictionary<String, AnyObject>, serviceName: FORGOT_PASSWORD, serviceType: "FORGOT PASSWORD", modelType: UserResponse.self, success: { (response) in
             let responseObj = response as! UserResponse
             if responseObj.status == true {
-                
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "SetLocationViewController") as! SetLocationViewController
-                self.navigationController?.pushViewController(vc, animated: true)
                 
             }
             

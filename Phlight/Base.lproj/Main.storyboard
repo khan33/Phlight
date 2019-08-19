@@ -163,6 +163,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dcR-0a-gla"/>
                     </view>
+                    <connections>
+                        <outlet property="emailLbl" destination="5Dd-gO-w3V" id="zIS-fq-Q7I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m4b-C5-Vk7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -221,29 +224,41 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vOw-tF-2bM">
                                         <rect key="frame" x="16" y="94.333333333333314" width="350" height="55"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yT1-0S-Fdn">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yT1-0S-Fdn">
                                                 <rect key="frame" x="0.0" y="0.0" width="83.666666666666671" height="55"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="eRB-vu-spF" id="cgJ-dj-08r"/>
+                                                </connections>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ven-Tm-hl3">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ven-Tm-hl3">
                                                 <rect key="frame" x="88.666666666666686" y="0.0" width="84" height="55"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="eRB-vu-spF" id="opc-oC-bVf"/>
+                                                </connections>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pji-xU-Xue">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pji-xU-Xue">
                                                 <rect key="frame" x="177.66666666666666" y="0.0" width="83.666666666666657" height="55"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="eRB-vu-spF" id="g2n-8z-CLY"/>
+                                                </connections>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r4d-hb-PNs">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r4d-hb-PNs">
                                                 <rect key="frame" x="266.33333333333331" y="0.0" width="83.666666666666686" height="55"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="eRB-vu-spF" id="TFR-03-hD0"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -319,6 +334,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jVB-VI-1mV"/>
                     </view>
+                    <connections>
+                        <outlet property="mobileNbLbl" destination="ubc-w2-9Oc" id="PlA-8L-Zhk"/>
+                        <outlet property="tf1" destination="yT1-0S-Fdn" id="VYE-Pb-hHR"/>
+                        <outlet property="tf2" destination="ven-Tm-hl3" id="VWG-pl-Q5F"/>
+                        <outlet property="tf3" destination="pji-xU-Xue" id="9iK-sb-0Tz"/>
+                        <outlet property="tf4" destination="r4d-hb-PNs" id="YlC-4u-Hix"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JFe-9Q-fV2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

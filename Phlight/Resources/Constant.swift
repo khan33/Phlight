@@ -36,6 +36,6 @@ let SAVE_CURRETN_LOCATION = BASE_URL + "user/user_current_address"
 let FORGOT_PASSWORD =   BASE_URL + "user/forgot_password"
 let VERIFY_EMAIL = BASE_URL + ""
 let RESEND_EMAIL = BASE_URL + ""
-let VERIFY_OTP_CODE = BASE_URL + ""
+let VERIFY_OTP_CODE = BASE_URL + "user/verify_code"
 let RESEND_OTP = BASE_URL + ""
 

@@ -48,6 +48,15 @@ class Utility:NSObject {
         view.layer.cornerRadius = radius
         view.layer.masksToBounds = true
     }
+    func isEmailVerified() -> Bool {
+        return UserDefaults.standard.bool(forKey: "email_verified")
+    }
+    func isPhoneNumberVerified() -> Bool {
+        return UserDefaults.standard.bool(forKey: "phone_verified")
+    }
+    func getUserId() -> Int {
+        return UserDefaults.standard.integer(forKey: "user_id")
+    }
    
     
 }

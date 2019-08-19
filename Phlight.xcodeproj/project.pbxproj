@@ -75,6 +75,8 @@
 		E89E444922F8A18C005A7611 /* PageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89E444722F8A18C005A7611 /* PageCollectionViewCell.swift */; };
 		E89E444A22F8A18C005A7611 /* PageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E89E444822F8A18C005A7611 /* PageCollectionViewCell.xib */; };
 		E89E444C22F8B29D005A7611 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89E444B22F8B29D005A7611 /* extension.swift */; };
+		E8DBF6E4230A7BE00091B55B /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DBF6E3230A7BE00091B55B /* Defaults.swift */; };
+		E8DBF6E8230ABC510091B55B /* UIViewController+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DBF6E7230ABC510091B55B /* UIViewController+Helper.m */; };
 		ED7A84352C1C771D0206A86F /* Pods_Phlight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 820D3DFE9536BD2EA163D48A /* Pods_Phlight.framework */; };
 /* End PBXBuildFile section */
 
@@ -152,6 +154,10 @@
 		E89E444722F8A18C005A7611 /* PageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCollectionViewCell.swift; sourceTree = "<group>"; };
 		E89E444822F8A18C005A7611 /* PageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageCollectionViewCell.xib; sourceTree = "<group>"; };
 		E89E444B22F8B29D005A7611 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+		E8DBF6E3230A7BE00091B55B /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		E8DBF6E6230ABC510091B55B /* UIViewController+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Helper.h"; sourceTree = "<group>"; };
+		E8DBF6E7230ABC510091B55B /* UIViewController+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Helper.m"; sourceTree = "<group>"; };
+		E8DBF6E9230ABCD50091B55B /* Phlight-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Phlight-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +220,7 @@
 			children = (
 				E89E444522F8A151005A7611 /* Page.swift */,
 				E88CD5BB22FC3C5E0045C742 /* UserResponse.swift */,
+				E8DBF6E3230A7BE00091B55B /* Defaults.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -240,12 +247,14 @@
 		E884C1D522F70E1800D63AC5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E8DBF6E5230ABC510091B55B /* AlertController */,
 				E86F913522FD441A00C545D0 /* GoogleService-Info.plist */,
 				E8949A0722FC94AF006FB312 /* montserrat */,
 				E898B31022FC07F600C3529B /* WebServiceManager.swift */,
 				E898B30C22FBF59400C3529B /* Utility.swift */,
 				E898B30E22FBFC2000C3529B /* Constant.swift */,
 				E86F913722FD56F000C545D0 /* ImagePicker.swift */,
+				E8DBF6E9230ABCD50091B55B /* Phlight-Bridging-Header.h */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -346,6 +355,15 @@
 				E86F914422FDB29E00C545D0 /* CardViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		E8DBF6E5230ABC510091B55B /* AlertController */ = {
+			isa = PBXGroup;
+			children = (
+				E8DBF6E6230ABC510091B55B /* UIViewController+Helper.h */,
+				E8DBF6E7230ABC510091B55B /* UIViewController+Helper.m */,
+			);
+			path = AlertController;
 			sourceTree = "<group>";
 		};
 		F50D9D1F87BACAECC5D9A942 /* Pods */ = {
@@ -543,6 +561,7 @@
 				E89E444622F8A151005A7611 /* Page.swift in Sources */,
 				E884C1C122F70D7100D63AC5 /* AppDelegate.swift in Sources */,
 				E898B30B22FBF33F00C3529B /* ToastView.swift in Sources */,
+				E8DBF6E4230A7BE00091B55B /* Defaults.swift in Sources */,
 				E89E444C22F8B29D005A7611 /* extension.swift in Sources */,
 				E89E443D22F8A08A005A7611 /* SetLocationViewController.swift in Sources */,
 				E88CD5BC22FC3C5E0045C742 /* UserResponse.swift in Sources */,
@@ -554,6 +573,7 @@
 				E86F914522FDB29E00C545D0 /* CardViewController.swift in Sources */,
 				E898B31122FC07F600C3529B /* WebServiceManager.swift in Sources */,
 				E86F913A22FD862700C545D0 /* SupportedAreasVC.swift in Sources */,
+				E8DBF6E8230ABC510091B55B /* UIViewController+Helper.m in Sources */,
 				E89E444922F8A18C005A7611 /* PageCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -713,6 +733,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vw.Phlight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/attakhan/Desktop/Phlight/Phlight/Resources/Phlight-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -735,6 +756,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vw.Phlight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/attakhan/Desktop/Phlight/Phlight/Resources/Phlight-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

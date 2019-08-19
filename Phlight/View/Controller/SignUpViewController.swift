@@ -62,35 +62,43 @@ class SignUpViewController: UIViewController {
             nameTF.attributedPlaceholder = NSAttributedString(string: "Email",
                                                                attributes: [NSAttributedString.Key.foregroundColor: UIColor.placeholderErrorColor])
             Utility.shared.shakeView(userNameView)
-            ToastView.shared.long(self.view, txt_msg: "Please enter your name.")
+            ToastView.shared.short(self.view, txt_msg: "Please enter your name.")
             return
         }
         guard let mobileNbTxt = mobileNbTF.text, !mobileNbTxt.isEmpty else {
             mobileNbTF.attributedPlaceholder = NSAttributedString(string: "Mobile Number",
                                                                   attributes: [NSAttributedString.Key.foregroundColor: UIColor.placeholderErrorColor])
             Utility.shared.shakeView(mobileNbView)
-            ToastView.shared.long(self.view, txt_msg: "Please enter your mobile number.")
+            ToastView.shared.short(self.view, txt_msg: "Please enter your mobile number.")
             return
         }
         guard let emailTxt = emailTF.text, !emailTxt.isEmpty else {
             emailTF.attributedPlaceholder = NSAttributedString(string: "Email",
                                                                attributes: [NSAttributedString.Key.foregroundColor: UIColor.placeholderErrorColor])
             Utility.shared.shakeView(emailView)
-            ToastView.shared.long(self.view, txt_msg: "Please enter your email")
+            ToastView.shared.short(self.view, txt_msg: "Please enter your email")
             return
         }
         guard let passwordTxt = passwordTF.text, !passwordTxt.isEmpty else {
             passwordTF.attributedPlaceholder = NSAttributedString(string: "Password",
                                                                   attributes: [NSAttributedString.Key.foregroundColor: UIColor.placeholderErrorColor])
             Utility.shared.shakeView(passwordView)
-            ToastView.shared.long(self.view, txt_msg: "Please enter your password")
+            ToastView.shared.short(self.view, txt_msg: "Please enter your password")
             return
         }
-        guard let c_passwordTxt = emailTF.text, !c_passwordTxt.isEmpty else {
-            emailTF.attributedPlaceholder = NSAttributedString(string: "Confirm Password",
+        guard let c_passwordTxt = c_passwordTF.text, !c_passwordTxt.isEmpty else {
+            c_passwordTF.attributedPlaceholder = NSAttributedString(string: "Confirm Password",
                                                                attributes: [NSAttributedString.Key.foregroundColor: UIColor.placeholderErrorColor])
             Utility.shared.shakeView(c_passwordView)
-            ToastView.shared.long(self.view, txt_msg: "Please enter your Confirm Password")
+            ToastView.shared.short(self.view, txt_msg: "Please enter your Confirm Password")
+            return
+        }
+        
+        if passwordTxt != c_passwordTxt {
+            c_passwordTF.attributedPlaceholder = NSAttributedString(string: "Confirm Password",
+                                                               attributes: [NSAttributedString.Key.foregroundColor: UIColor.placeholderErrorColor])
+            Utility.shared.shakeView(c_passwordView)
+            ToastView.shared.short(self.view, txt_msg: "Mismatch your Confirm Password")
             return
         }
         let invitionalCode = invitationCodeTF.text ?? ""
@@ -105,15 +113,27 @@ class SignUpViewController: UIViewController {
             "latitude": "",
             "longitude": "",
             "user_image": "",
-            verification_code = invitionalCode
+            "verification_code": invitionalCode
             ] as [String: Any]
         
         WebServiceManager.sharedInstance.loginRequest(params: params as Dictionary<String, AnyObject>, serviceName: REGISTER, serviceType: "REGISTER API", modelType: UserResponse.self, success: { (response) in
             let responseObj = response as! UserResponse
             if responseObj.status == true {
-                print(responseObj.message)
-                
-                
+                let alert = UIAlertController(title: "Alert", message: "You have registered successfully.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                    switch action.style{
+                    case .default:
+                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    case .cancel:
+                        print("cancel")
+                        
+                    case .destructive:
+                        print("destructive")
+                        
+                        
+                    }}))
+                self.present(alert, animated: true, completion: nil)
             } else {
                 print(responseObj.message)
             }

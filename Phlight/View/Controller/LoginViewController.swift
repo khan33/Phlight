@@ -93,23 +93,33 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate, GIDSignInDele
         WebServiceManager.sharedInstance.loginRequest(params: params as Dictionary<String, AnyObject>, serviceName: LOGIN, serviceType: "Login API", modelType: UserResponse.self, success: { (response) in
             let responseObj = response as! UserResponse
             if responseObj.status == true {
-                
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "SetLocationViewController") as! SetLocationViewController
-                self.navigationController?.pushViewController(vc, animated: true)
-                
+                UserDefaults.standard.set(responseObj.user_details?.email_verified, forKey: "email_verified")
+                UserDefaults.standard.set(responseObj.user_details?.phone_verified, forKey: "phone_verified")
+                UserDefaults.standard.set(responseObj.user_details?.email, forKey: "user_email")
+                UserDefaults.standard.set(responseObj.user_details?.mobile_number, forKey: "user_phone")
+                UserDefaults.standard.set(responseObj.user_details?.id, forKey: "user_id")
+                self.launchScreen()
             }
-            
-            
-            
         }, fail: { (error) in
-            
-            
         }, showHUD: true)
     }
     @IBAction func onTapSignupBtn(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
         navigationController?.pushViewController(vc, animated: true)
         
+    }
+    
+    private func launchScreen() {
+        if !Utility.shared.isEmailVerified() {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ConfirmEmailViewController") as! ConfirmEmailViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else if !Utility.shared.isPhoneNumberVerified() {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "VerifyNumberViewController") as! VerifyNumberViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "SetLocationViewController") as! SetLocationViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
