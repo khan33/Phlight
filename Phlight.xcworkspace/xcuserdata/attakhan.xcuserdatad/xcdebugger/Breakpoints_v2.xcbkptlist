@@ -9,46 +9,30 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Phlight/View/Controller/VerifyNumberViewController.swift"
-            timestampString = "587904904.761927"
+            filePath = "Phlight/View/Controller/LoginViewController.swift"
+            timestampString = "588003359.579034"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "onClickVerifyNumber(_:)"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "getFBUserData()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Phlight.VerifyNumberViewController.onClickVerifyNumber(Any) -&gt; ()"
-                  moduleName = "Phlight"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/attakhan/Desktop/Phlight/Phlight/View/Controller/VerifyNumberViewController.swift"
-                  timestampString = "587904904.948794"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "63"
-                  endingLineNumber = "63"
-                  offsetFromSymbolStart = "3422">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.AnyObject) -&gt; () in Phlight.VerifyNumberViewController.onClickVerifyNumber(Any) -&gt; ()"
-                  moduleName = "Phlight"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/attakhan/Desktop/Phlight/Phlight/View/Controller/VerifyNumberViewController.swift"
-                  timestampString = "587904904.951161"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "64"
-                  endingLineNumber = "64"
-                  offsetFromSymbolStart = "86">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Phlight/View/Controller/LoginViewController.swift"
+            timestampString = "588003359.579571"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "onClickFbBtn(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

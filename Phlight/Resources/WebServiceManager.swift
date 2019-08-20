@@ -19,7 +19,7 @@ class WebServiceManager: NSObject {
     func setHeader() -> HTTPHeaders {
         let token =  UserDefaults.standard.string(forKey: "token")
         let headers: HTTPHeaders = [
-            "Authorization": "\(token!)",
+            //"Authorization": "\(token!)",
             "Content-Type": "application/json"
         ]
         return headers

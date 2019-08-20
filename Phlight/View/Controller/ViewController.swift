@@ -19,8 +19,11 @@ class ViewController: UIViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        if Utility.shared.isReadWalkThrough() {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            navigationController?.pushViewController(vc, animated: true)
+        }
         collectionView.register(PageCollectionViewCell.nib, forCellWithReuseIdentifier: PageCollectionViewCell.identifier)
-        //navigationController?.hidesBarsOnTap = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,6 +62,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     @objc func onClickWelcomeBtn(_ sender: UIButton) {
+        print("abc")
+        UserDefaults.standard.set(true, forKey: "isRead")
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         navigationController?.pushViewController(vc, animated: true)
     }

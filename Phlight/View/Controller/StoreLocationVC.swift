@@ -20,6 +20,9 @@ class StoreLocationVC: UIViewController {
     var resultsViewController: GMSAutocompleteResultsViewController?
     var searchController: UISearchController?
     var resultView: UITextView?
+    var store_data: StoreModel?
+    
+    
     
     enum CardState {
         case expanded
@@ -44,11 +47,31 @@ class StoreLocationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        print(store_data)
+        
         configLocationManager()
         
         mapView.delegate = self
         addressTF.addTarget(self, action: #selector(autocompleteClicked), for: .touchDown)
         setupCard()
+        let storeLat = (store_data?.latitude as! NSString).doubleValue
+        let storeLong = (store_data?.longitude as! NSString).doubleValue
+        
+        mapView.camera = GMSCameraPosition(latitude: storeLat, longitude: storeLong, zoom: 15)
+        let position = CLLocationCoordinate2D(latitude: storeLat, longitude: storeLong)
+        let marker = GMSMarker(position: position)
+        marker.icon = UIImage(named: "marker_icon")
+        marker.map = mapView
+        
+        let circ = GMSCircle(position: position, radius: 500)
+        
+        circ.fillColor = UIColor(red: 0, green: 142, blue: 0, alpha: 0.1)
+        circ.strokeColor = .lightGray
+        circ.strokeWidth = 1
+        circ.map = mapView
+            
+            //GMSCameraPosition(target: location.coordinate, zoom: 15)
     }
     
     func setupCard() {
@@ -57,6 +80,8 @@ class StoreLocationVC: UIViewController {
         self.view.addSubview(visualEffectView)
         
         cardViewController = CardViewController(nibName:"CardViewController", bundle:nil)
+        cardViewController.storeData = store_data
+        
         self.addChild(cardViewController)
         self.view.addSubview(cardViewController.view)
         
@@ -244,7 +269,7 @@ extension StoreLocationVC: CLLocationManagerDelegate {
         guard let location = locations.first else {
             return
         }
-        mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15)
+        //mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15)
         locationManager?.stopUpdatingLocation()
         
         print("Latitude = \(location.coordinate.latitude), Longitude = \(location.coordinate.longitude)")

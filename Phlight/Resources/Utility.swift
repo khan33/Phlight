@@ -54,6 +54,9 @@ class Utility:NSObject {
     func isPhoneNumberVerified() -> Bool {
         return UserDefaults.standard.bool(forKey: "phone_verified")
     }
+    func isReadWalkThrough() -> Bool {
+        return UserDefaults.standard.bool(forKey: "isRead")
+    }
     func getUserId() -> Int {
         return UserDefaults.standard.integer(forKey: "user_id")
     }

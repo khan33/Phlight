@@ -14,13 +14,15 @@ class UserResponse: Mappable {
     var status              :       Bool?
     var message             :       String?
     var user_details        :       UserDetails?
+    var store_data          :       [StoreModel]?
     required init?(map: Map){
         
     }
     func mapping(map: Map) {
-        status      <- map["status"]
-        message     <- map["message"]
+        status          <- map["status"]
+        message         <- map["message"]
         user_details    <- map["user_details"]
+        store_data      <- map["data"]
     }
 }
 class UserDetails: Mappable {
@@ -51,3 +53,27 @@ class UserDetails: Mappable {
 }
 
 
+class StoreModel: Mappable {
+    var id          :       Int?
+    var name        :       String?
+    var email       :       String?
+    var mobile_no   :       String?
+    var address     :       String?
+    var latitude    :       String?
+    var longitude   :       String?
+    var store_image :       String?
+    var radius      :       String?
+    required init?(map: Map){
+        
+    }
+    func mapping(map: Map) {
+        id          <- map["id"]
+        name        <- map["name"]
+        email       <- map["email"]
+        mobile_no   <- map["mobile_no"]
+        address     <- map["address"]
+        latitude    <- map["latitude"]
+        longitude   <- map["longitude"]
+        store_image <- map["store_image"]
+    }
+}

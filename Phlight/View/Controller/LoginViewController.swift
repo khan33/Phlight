@@ -47,8 +47,10 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate, GIDSignInDele
     }
     @IBAction func onClickFbBtn(_ sender: UIButton) {
         let fbLoginManager : LoginManager = LoginManager()
-        fbLoginManager.logIn(permissions: ["email"], from: self) { (result, error) -> Void in
+        fbLoginManager.logIn(permissions: ["public_profile","email"], from: self) { (result, error) -> Void in
             if (error == nil){
+                print(result?.token?.tokenString)
+                
                 let fbloginresult : LoginManagerLoginResult = result!
                 if(fbloginresult.grantedPermissions.contains("email"))
                 {
@@ -62,11 +64,62 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate, GIDSignInDele
             GraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
                 if (error == nil){
                     //everything works print the user data
+                    
                     print(result)
+//                    if let email = result["email"] as? String {
+//                        print(email)
+//                    }
+                    
+                    let url = result
+                    
+                    
+                    
                 }
             })
         }
     }
+    func SocialLogin() {
+        let params = [
+            "name": "nameTxt",
+            "email": "emailTxt",
+            "password": "",
+            "c_password": "c_passwordTxt",
+            "mobile_no": "mobileNbTxt",
+            "latitude": "",
+            "longitude": "",
+            "user_image": "",
+//            "verification_code": invitionalCode
+            ] as [String: Any]
+        
+        WebServiceManager.sharedInstance.loginRequest(params: params as Dictionary<String, AnyObject>, serviceName: SOCIAL_LOGIN, serviceType: "SOCIAL LOGIN API", modelType: UserResponse.self, success: { (response) in
+            let responseObj = response as! UserResponse
+            if responseObj.status == true {
+                let alert = UIAlertController(title: "Alert", message: "You have registered successfully.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                    switch action.style{
+                    case .default:
+                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    case .cancel:
+                        print("cancel")
+                        
+                    case .destructive:
+                        print("destructive")
+                        
+                        
+                    }}))
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                print(responseObj.message)
+            }
+            
+        }, fail: { (error) in
+            
+            
+        }, showHUD: true)
+    }
+    
+    
     @IBAction func onClickRememberBtn(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
     }

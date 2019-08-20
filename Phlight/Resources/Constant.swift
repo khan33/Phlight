@@ -38,4 +38,5 @@ let VERIFY_EMAIL = BASE_URL + ""
 let RESEND_EMAIL = BASE_URL + ""
 let VERIFY_OTP_CODE = BASE_URL + "user/verify_code"
 let RESEND_OTP = BASE_URL + ""
-
+let ALL_STROE   = BASE_URL + "user/all_stores"
+let SOCIAL_LOGIN = BASE_URL + "user/socialLogin"

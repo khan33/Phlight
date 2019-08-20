@@ -10,6 +10,8 @@ import UIKit
 
 class StoreViewCell: UITableViewCell {
 
+    @IBOutlet weak var storeName: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
