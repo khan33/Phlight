@@ -25,7 +25,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var userImgView: UIImageView!
     
     var imagePicker: ImagePicker!
-    
+    var prfileImg: UIImage?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -112,38 +112,47 @@ class SignUpViewController: UIViewController {
             "mobile_no": mobileNbTxt,
             "latitude": "",
             "longitude": "",
-            "user_image": "",
             "verification_code": invitionalCode
             ] as [String: Any]
         
         WebServiceManager.sharedInstance.loginRequest(params: params as Dictionary<String, AnyObject>, serviceName: REGISTER, serviceType: "REGISTER API", modelType: UserResponse.self, success: { (response) in
             let responseObj = response as! UserResponse
             if responseObj.status == true {
-                let alert = UIAlertController(title: "Alert", message: "You have registered successfully.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-                    switch action.style{
-                    case .default:
+                let userID = responseObj.user_details?.id ?? 0
+                if self.prfileImg != nil {
+                    self.uploadImage(userID)
+                }
+                
+                self.showAlert(title: "Alert", message: "You have registered successfully..", controller: self
+                    , dismissCompletion: {
                         let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
                         self.navigationController?.pushViewController(vc, animated: true)
-                    case .cancel:
-                        print("cancel")
-                        
-                    case .destructive:
-                        print("destructive")
-                        
-                        
-                    }}))
-                self.present(alert, animated: true, completion: nil)
+                })
+                
             } else {
-                print(responseObj.message)
+                self.showAlert(title: "Alert", message: responseObj.message ?? "Sorry, something went wrong. Please try again.", controller: self
+                    , dismissCompletion: {
+                })
             }
             
         }, fail: { (error) in
             
-            
         }, showHUD: true)
-        
-        
+    }
+    
+    func uploadImage(_ userID: Int) {
+        let  params: NSDictionary = [
+            "id": userID
+        ]
+        WebServiceManager.sharedInstance.multiPartImage(params: params as! Dictionary<String, Any>, serviceName: UPLOAD_IMG, imageParam: "image", serviceType: "upload Image", profileImage: prfileImg, cover_image_param: "", cover_image: nil , modelType: UserResponse.self, success: { (response) in
+            let responseObj = response as! UserResponse
+            if responseObj.status ?? false {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }) { (error) in
+            //
+            
+        }
         
         
     }
@@ -178,6 +187,7 @@ extension SignUpViewController: ImagePickerDelegate {
     func didSelect(image: UIImage?) {
         self.userImgView.contentMode = .scaleAspectFill
         self.userImgView.image = image
+        prfileImg = image
     }
     
 }

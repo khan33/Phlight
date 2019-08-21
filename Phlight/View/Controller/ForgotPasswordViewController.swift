@@ -35,7 +35,14 @@ class ForgotPasswordViewController: UIViewController {
         WebServiceManager.sharedInstance.loginRequest(params: params as Dictionary<String, AnyObject>, serviceName: FORGOT_PASSWORD, serviceType: "FORGOT PASSWORD", modelType: UserResponse.self, success: { (response) in
             let responseObj = response as! UserResponse
             if responseObj.status == true {
-                
+                self.showAlert(title: "Alert", message: responseObj.message ?? "Sorry, something went wrong. Please try again.", controller: self
+                    , dismissCompletion: {
+                        self.navigationController?.popViewController(animated: true)
+                })
+            } else {
+                self.showAlert(title: "Alert", message: responseObj.message ?? "Sorry, something went wrong. Please try again.", controller: self
+                    , dismissCompletion: {
+                })
             }
             
             

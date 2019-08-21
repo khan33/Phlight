@@ -13,7 +13,6 @@
 		E86F913A22FD862700C545D0 /* SupportedAreasVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86F913922FD862700C545D0 /* SupportedAreasVC.swift */; };
 		E86F913C22FD877F00C545D0 /* StoreViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86F913B22FD877F00C545D0 /* StoreViewCell.swift */; };
 		E86F913E22FD93D600C545D0 /* StoreLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86F913D22FD93D600C545D0 /* StoreLocationVC.swift */; };
-		E86F914322FDB24C00C545D0 /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E86F914222FDB24C00C545D0 /* CardViewController.xib */; };
 		E86F914522FDB29E00C545D0 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86F914422FDB29E00C545D0 /* CardViewController.swift */; };
 		E884C1C122F70D7100D63AC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E884C1C022F70D7100D63AC5 /* AppDelegate.swift */; };
 		E884C1C322F70D7100D63AC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E884C1C222F70D7100D63AC5 /* ViewController.swift */; };
@@ -77,6 +76,7 @@
 		E89E444C22F8B29D005A7611 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89E444B22F8B29D005A7611 /* extension.swift */; };
 		E8DBF6E4230A7BE00091B55B /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DBF6E3230A7BE00091B55B /* Defaults.swift */; };
 		E8DBF6E8230ABC510091B55B /* UIViewController+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DBF6E7230ABC510091B55B /* UIViewController+Helper.m */; };
+		E8E6E5DE230D0AC400204974 /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E6E5DD230D0AC400204974 /* CardViewController.xib */; };
 		ED7A84352C1C771D0206A86F /* Pods_Phlight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 820D3DFE9536BD2EA163D48A /* Pods_Phlight.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,7 +90,6 @@
 		E86F913922FD862700C545D0 /* SupportedAreasVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportedAreasVC.swift; sourceTree = "<group>"; };
 		E86F913B22FD877F00C545D0 /* StoreViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewCell.swift; sourceTree = "<group>"; };
 		E86F913D22FD93D600C545D0 /* StoreLocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreLocationVC.swift; sourceTree = "<group>"; };
-		E86F914222FDB24C00C545D0 /* CardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
 		E86F914422FDB29E00C545D0 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		E884C1BD22F70D7100D63AC5 /* Phlight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Phlight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E884C1C022F70D7100D63AC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +157,7 @@
 		E8DBF6E6230ABC510091B55B /* UIViewController+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Helper.h"; sourceTree = "<group>"; };
 		E8DBF6E7230ABC510091B55B /* UIViewController+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Helper.m"; sourceTree = "<group>"; };
 		E8DBF6E9230ABCD50091B55B /* Phlight-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Phlight-Bridging-Header.h"; sourceTree = "<group>"; };
+		E8E6E5DD230D0AC400204974 /* CardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,7 +323,7 @@
 		E89E444022F8A0D5005A7611 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				E86F914222FDB24C00C545D0 /* CardViewController.xib */,
+				E8E6E5DD230D0AC400204974 /* CardViewController.xib */,
 				E89E444322F8A11D005A7611 /* DesignableView.swift */,
 				E898B30A22FBF33F00C3529B /* ToastView.swift */,
 			);
@@ -444,7 +444,7 @@
 				E8949A4222FC94AF006FB312 /* Montserrat-ExtraBoldItalic.otf in Resources */,
 				E8949A4D22FC94AF006FB312 /* MontserratAlternates-ThinItalic.otf in Resources */,
 				E8949A4B22FC94AF006FB312 /* MontserratAlternates-ExtraLight.otf in Resources */,
-				E86F914322FDB24C00C545D0 /* CardViewController.xib in Resources */,
+				E8E6E5DE230D0AC400204974 /* CardViewController.xib in Resources */,
 				E884C1CB22F70D7300D63AC5 /* LaunchScreen.storyboard in Resources */,
 				E8949A4F22FC94AF006FB312 /* MontserratAlternates-ExtraBoldItalic.otf in Resources */,
 				E8949A4122FC94AF006FB312 /* Montserrat-SemiBoldItalic.otf in Resources */,

@@ -15,4 +15,5 @@ target 'Phlight' do
   pod 'Alamofire'
   pod 'SVProgressHUD'
   pod 'IQKeyboardManagerSwift'
+  pod 'SDWebImage'
 end

@@ -31,18 +31,23 @@ class VerifyNumberViewController: UIViewController {
     }
     
     @IBAction func onClickResendCode(_ sender: Any) {
+        let userId = Utility.shared.getUserId()
         let params = [
-            "email": "test@gmail.com",
-            "id": "123"
+            "id": userId
             ] as [String: Any]
         
-        WebServiceManager.sharedInstance.loginRequest(params: params as Dictionary<String, AnyObject>, serviceName: LOGIN, serviceType: "Login API", modelType: UserResponse.self, success: { (response) in
+        WebServiceManager.sharedInstance.loginRequest(params: params as Dictionary<String, AnyObject>, serviceName: RESEND_OTP, serviceType: "RESEND OTP API", modelType: UserResponse.self, success: { (response) in
             let responseObj = response as! UserResponse
             if responseObj.status == true {
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "SetLocationViewController") as! SetLocationViewController
-                self.navigationController?.pushViewController(vc, animated: true)
-                
+                self.showAlert(title: "Alert", message: responseObj.message ?? "Sorry, something went wrong. Please try again.", controller: self
+                    , dismissCompletion: {
+                })
+            } else {
+                self.showAlert(title: "Alert", message: responseObj.message ?? "Sorry, something went wrong. Please try again.", controller: self
+                    , dismissCompletion: {
+                })
             }
+            
         }, fail: { (error) in
             
             
@@ -65,9 +70,16 @@ class VerifyNumberViewController: UIViewController {
             print(responseObj.message)
             if responseObj.status == true {
                 UserDefaults.standard.set(true, forKey: "phone_verified")
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "SetLocationViewController") as! SetLocationViewController
-                self.navigationController?.pushViewController(vc, animated: true)
-                
+                self.showAlert(title: "Alert", message: responseObj.message ?? "Sorry, something went wrong. Please try again.", controller: self
+                    , dismissCompletion: {
+                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SetLocationViewController") as! SetLocationViewController
+                        self.navigationController?.pushViewController(vc, animated: true)
+                })
+            } else {
+                self.showAlert(title: "Alert", message: responseObj.message ?? "Sorry, something went wrong. Please try again.", controller: self
+                    , dismissCompletion: {
+    
+                })
             }
             
             

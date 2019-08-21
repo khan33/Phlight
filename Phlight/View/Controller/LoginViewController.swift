@@ -13,6 +13,8 @@ import GoogleSignIn
 
 class LoginViewController: UIViewController , GIDSignInUIDelegate, GIDSignInDelegate{
 
+    
+    
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var checkBtn: UIImageView!
@@ -29,6 +31,18 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate, GIDSignInDele
         super.viewDidLoad()
         emailTF.delegate = self
         passwordTF.delegate = self
+        
+        
+        Utility.shared.setDefaultValue(true, "isRead")
+        Utility.shared.setDefaultValue("test@gmail.com", "user_email")
+
+        
+        print(Utility.shared.getDefaultValue("user_email"))
+        print(Utility.shared.getDefaultValue("isRead"))
+        
+        
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,7 +84,7 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate, GIDSignInDele
 //                        print(email)
 //                    }
                     
-                    let url = result
+                    //let url = result
                     
                     
                     
@@ -147,11 +161,16 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate, GIDSignInDele
             let responseObj = response as! UserResponse
             if responseObj.status == true {
                 UserDefaults.standard.set(responseObj.user_details?.email_verified, forKey: "email_verified")
-                UserDefaults.standard.set(responseObj.user_details?.phone_verified, forKey: "phone_verified")
+                UserDefaults.standard.set(responseObj.user_details?.email_verified, forKey: "phone_verified")
                 UserDefaults.standard.set(responseObj.user_details?.email, forKey: "user_email")
                 UserDefaults.standard.set(responseObj.user_details?.mobile_number, forKey: "user_phone")
                 UserDefaults.standard.set(responseObj.user_details?.id, forKey: "user_id")
+                UserDefaults.standard.set(responseObj.user_details?.user_image, forKey: "profile_img")
                 self.launchScreen()
+            } else {
+                self.showAlert(title: "Alert", message: responseObj.message ?? "Sorry, something went wrong. Please try again.", controller: self
+                    , dismissCompletion: {
+                })
             }
         }, fail: { (error) in
         }, showHUD: true)

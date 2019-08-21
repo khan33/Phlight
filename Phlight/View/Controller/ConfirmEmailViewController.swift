@@ -18,6 +18,7 @@ class ConfirmEmailViewController: UIViewController {
         if let emailTxt = UserDefaults.standard.string(forKey: "user_email") {
             emailLbl.text = emailTxt
         }
+        
         // Do any additional setup after loading the view.
     }
     
@@ -27,16 +28,22 @@ class ConfirmEmailViewController: UIViewController {
 
     }
     @IBAction func onClickResendBtn(_ sender: Any) {
-       
+        let userId = Utility.shared.getUserId()
+        let userEmail = Utility.shared.getUserEmail()
         let params = [
-            "email": "test@gmail.com",
-            "id": "123"
+            "id": userId
             ] as [String: Any]
         
-        WebServiceManager.sharedInstance.loginRequest(params: params as Dictionary<String, AnyObject>, serviceName: LOGIN, serviceType: "Login API", modelType: UserResponse.self, success: { (response) in
+        WebServiceManager.sharedInstance.loginRequest(params: params as Dictionary<String, AnyObject>, serviceName: RESEND_EMAIL, serviceType: "RESEND EMAIL API", modelType: UserResponse.self, success: { (response) in
             let responseObj = response as! UserResponse
             if responseObj.status == true {
-                
+                self.showAlert(title: "Alert", message: responseObj.message ?? "Sorry, something went wrong. Please try again.", controller: self
+                    , dismissCompletion: {
+                })
+            } else {
+                self.showAlert(title: "Alert", message: responseObj.message ?? "Sorry, something went wrong. Please try again.", controller: self
+                    , dismissCompletion: {
+                })
             }
             
         }, fail: { (error) in

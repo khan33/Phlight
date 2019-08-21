@@ -60,6 +60,20 @@ class Utility:NSObject {
     func getUserId() -> Int {
         return UserDefaults.standard.integer(forKey: "user_id")
     }
+    func getUserEmail() -> String {
+        return UserDefaults.standard.string(forKey: "user_email") ?? ""
+    }
+    
+    
+    // Set Userdefault Value
+    
+    func setDefaultValue<T>(_ value: T, _ key: String) {
+        UserDefaults.standard.set(value, forKey: key)
+    }
+    
+    func getDefaultValue<T>(_ key: String) -> T {
+        return UserDefaults.standard.object(forKey: key) as! T
+    }
    
     
 }

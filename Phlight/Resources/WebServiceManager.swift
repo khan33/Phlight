@@ -254,26 +254,22 @@ class WebServiceManager: NSObject {
         }
         
     }
-    
-    /*
-    func multiPartImage<T: AnyObject>(params: Dictionary<String, Any>, serviceName: String,imageParam: String , serviceType: String,profileImage:UIImage? , cover_image_param: String, cover_image: UIImage?,modelType: T.Type, success: @escaping ( _ servicResponse: Any) -> Void, fail: @escaping (_ error: NSError) -> Void) where T: Mappable {
+    func multiPartImage<T: AnyObject>(params: Dictionary<String, Any>, serviceName: String, imageParam: String , serviceType: String, profileImage:UIImage? , cover_image_param: String, cover_image: UIImage?,modelType: T.Type, success: @escaping ( _ servicResponse: Any) -> Void, fail: @escaping (_ error: NSError) -> Void) where T: Mappable {
         
-        SVProgressHUD.show()
+        //SVProgressHUD.show()
         showNetworkIndicator()
         Alamofire.upload(multipartFormData:{ multipartFormData in
             if profileImage != nil {
-                
-                if let imageData = UIImage.jpegData(prof)
-                
-//                'UIImageJPEGRepresentation' has been replaced by instance method 'UIImage.jpegData(compressionQuality:)'
-                if let imageData = UIImageJPEGRepresentation(profileImage!, 0.5) {
-                    multipartFormData.append(imageData, withName:imageParam, fileName:"", mimeType: "image/png")
+                if let imageData = profileImage?.jpegData(compressionQuality: 0.5) {
+                    multipartFormData.append(imageData, withName:imageParam, fileName:"file.jpg", mimeType: "image/jpg")
                 }
             }
             for (key, value) in params {
-                let val = value as! String
-                multipartFormData.append(val.data(using: String.Encoding.utf8)!, withName: key)
+                if value is String || value is Int {
+                    multipartFormData.append("\(value)".data(using: .utf8)!, withName: key)
+                }
             }
+            
         },
                          to: serviceName,
                          encodingCompletion: { encodingResult in
@@ -284,8 +280,9 @@ class WebServiceManager: NSObject {
                             case .success(let upload, _, _):
                                 upload.responseJSON { response in
                                     print(response.result.value as Any)
-                                    SVProgressHUD.dismiss()
+                                    //SVProgressHUD.dismiss()
                                     if(response.result.value != nil){
+                                        print(response.result.value)
                                         let convertedResponse = Mapper<UserResponse>().map(JSON:response.result.value as! [String : Any])
                                         //                            /let convertedResponse3 = Mapper<UploadedPostObject>().map
                                         success(convertedResponse as AnyObject)
@@ -295,15 +292,14 @@ class WebServiceManager: NSObject {
                                 }
                             case .failure(let encodingError):
                                 print(encodingError)
-                                SVProgressHUD.dismiss()
+                                //SVProgressHUD.dismiss()
                                 fail(encodingError as NSError)
                             }
-                            
-        }
-        )
+        })
     }
     
-    */
+    
+   
     
     func showNetworkIndicator() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true

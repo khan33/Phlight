@@ -11,8 +11,6 @@ import UIKit
 class CardViewController: UIViewController {
     @IBOutlet weak var handleArea: UIView!
     @IBOutlet weak var storeName: UILabel!
-    
-    
     var storeData: StoreModel?
     
     override func viewDidLoad() {

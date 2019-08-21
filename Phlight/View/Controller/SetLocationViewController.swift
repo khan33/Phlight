@@ -17,7 +17,7 @@ class SetLocationViewController: UIViewController {
     }
     
     @IBAction func clickCurrentLocation(_ sender: Any) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ConfirmEmailViewController") as! ConfirmEmailViewController
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "UpdateProfileVC") as! UpdateProfileVC
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
