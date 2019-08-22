@@ -13,8 +13,8 @@ class CardViewController: UIViewController {
     @IBOutlet weak var storeName: UILabel!
     var storeData: StoreModel?
     
-    override func viewDidLoad() {
-        storeName.text = storeData?.name ?? ""
-    }
+//    override func viewDidLoad() {
+//        storeName.text = storeData?.name ?? ""
+//    }
     
 }

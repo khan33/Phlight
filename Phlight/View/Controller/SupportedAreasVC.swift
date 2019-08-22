@@ -44,6 +44,14 @@ class SupportedAreasVC: UIViewController {
         tableview.dataSource = self
         tableview.reloadData()
     }
+    
+    
+    @IBAction func onClickBackBtn(_ sender: Any) {
+        print("abccc")
+        navigationController?.popViewController(animated: true)
+    }
+    
+    
 }
 extension SupportedAreasVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {

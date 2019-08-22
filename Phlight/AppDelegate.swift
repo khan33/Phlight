@@ -22,11 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         IQKeyboardManager.shared.enable = true
-        GIDSignIn.sharedInstance().clientID = "523457978634-89tlrh9g35uefsad611n0de3d8edr57e.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().clientID = "523457978634-1qlvpq4vq51r4685t4h2b3jv7hmvtbf3.apps.googleusercontent.com"
         GIDSignIn.sharedInstance().delegate = self
         
-        GMSPlacesClient.provideAPIKey("AIzaSyCfgWqm1_-2tRFxAKSfT__4Co3hJKTMz60")
-        GMSServices.provideAPIKey("AIzaSyCfgWqm1_-2tRFxAKSfT__4Co3hJKTMz60")
+        GMSPlacesClient.provideAPIKey("AIzaSyCTMmzqV36Ke_xd-nf4PBwa0aVwp5i3ZEM")
+        GMSServices.provideAPIKey("AIzaSyCTMmzqV36Ke_xd-nf4PBwa0aVwp5i3ZEM")
         
         for family in UIFont.familyNames.sorted() {
             let names = UIFont.fontNames(forFamilyName: family)

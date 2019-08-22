@@ -14,6 +14,7 @@ class UserResponse: Mappable {
     var status              :       Bool?
     var message             :       String?
     var user_details        :       UserDetails?
+    var data                :       UserDetails?
     var store_data          :       [StoreModel]?
     required init?(map: Map){
         
@@ -23,6 +24,7 @@ class UserResponse: Mappable {
         message         <- map["message"]
         user_details    <- map["user_details"]
         store_data      <- map["data"]
+        data            <- map["data"]
     }
 }
 class UserDetails: Mappable {
@@ -35,13 +37,15 @@ class UserDetails: Mappable {
     var phone_verified  : Bool?
     var user_image      : String?
     var is_active       : String?
+    var is_email_verified   : String?
+    var is_phone_verified   : String?
     
     required init?(map: Map){
         
     }
     func mapping(map: Map) {
         id              <- map["id"]
-        name            <- map["id"]
+        name            <- map["name"]
         token           <- map["token"]
         mobile_number   <- map["mobile_no"]
         email           <- map["email"]
@@ -49,6 +53,9 @@ class UserDetails: Mappable {
         phone_verified  <- map["phone_verified"]
         user_image      <- map["user_image"]
         is_active       <- map["is_active"]
+        is_email_verified   <- map["is_email_verified"]
+        is_phone_verified   <- map["is_phone_verified"]
+        
     }
 }
 

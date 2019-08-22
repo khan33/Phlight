@@ -54,6 +54,7 @@ class ConfirmEmailViewController: UIViewController {
     
     
     @IBAction func onClickConfirm(_ sender: Any) {
+        print(Utility.shared.isPhoneNumberVerified())
         if !Utility.shared.isPhoneNumberVerified() {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "VerifyNumberViewController") as! VerifyNumberViewController
             self.navigationController?.pushViewController(vc, animated: true)

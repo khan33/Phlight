@@ -47,14 +47,10 @@ class StoreLocationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        print(store_data)
-        
-        configLocationManager()
+        //configLocationManager()
         
         mapView.delegate = self
-        addressTF.addTarget(self, action: #selector(autocompleteClicked), for: .touchDown)
-        setupCard()
+        //addressTF.addTarget(self, action: #selector(autocompleteClicked), for: .touchDown)
         let storeLat = (store_data?.latitude as! NSString).doubleValue
         let storeLong = (store_data?.longitude as! NSString).doubleValue
         
@@ -70,7 +66,11 @@ class StoreLocationVC: UIViewController {
         circ.strokeColor = .lightGray
         circ.strokeWidth = 1
         circ.map = mapView
-            
+        
+        
+        
+        //setupCard()
+        
             //GMSCameraPosition(target: location.coordinate, zoom: 15)
     }
     
@@ -82,10 +82,10 @@ class StoreLocationVC: UIViewController {
         cardViewController = CardViewController(nibName:"CardViewController", bundle:nil)
         cardViewController.storeData = store_data
         
-        self.addChild(cardViewController)
+//        self.addChild(cardViewController)
         self.view.addSubview(cardViewController.view)
         
-        cardViewController.view.frame = CGRect(x: 0, y: self.view.frame.height - cardHandleAreaHeight, width: self.view.bounds.width, height: cardHeight)
+//        cardViewController.view.frame = CGRect(x: 0, y: self.view.frame.height - cardHandleAreaHeight, width: self.view.bounds.width, height: cardHeight)
         
         cardViewController.view.clipsToBounds = true
         
@@ -98,6 +98,9 @@ class StoreLocationVC: UIViewController {
         
     }
     
+    @IBAction func onClickBackBtn(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
     
     
     @objc

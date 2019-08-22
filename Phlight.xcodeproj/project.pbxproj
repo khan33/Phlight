@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E827A09222FB11A40078EBE3 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E827A09122FB11A40078EBE3 /* Home.storyboard */; };
-		E86F913622FD441A00C545D0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E86F913522FD441A00C545D0 /* GoogleService-Info.plist */; };
 		E86F913822FD56F000C545D0 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86F913722FD56F000C545D0 /* ImagePicker.swift */; };
 		E86F913A22FD862700C545D0 /* SupportedAreasVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86F913922FD862700C545D0 /* SupportedAreasVC.swift */; };
 		E86F913C22FD877F00C545D0 /* StoreViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86F913B22FD877F00C545D0 /* StoreViewCell.swift */; };
@@ -85,7 +84,6 @@
 		4FBC8F27331A9FA2CF947D67 /* Pods-Phlight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phlight.debug.xcconfig"; path = "Target Support Files/Pods-Phlight/Pods-Phlight.debug.xcconfig"; sourceTree = "<group>"; };
 		820D3DFE9536BD2EA163D48A /* Pods_Phlight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Phlight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E827A09122FB11A40078EBE3 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		E86F913522FD441A00C545D0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E86F913722FD56F000C545D0 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		E86F913922FD862700C545D0 /* SupportedAreasVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportedAreasVC.swift; sourceTree = "<group>"; };
 		E86F913B22FD877F00C545D0 /* StoreViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewCell.swift; sourceTree = "<group>"; };
@@ -248,7 +246,6 @@
 			isa = PBXGroup;
 			children = (
 				E8DBF6E5230ABC510091B55B /* AlertController */,
-				E86F913522FD441A00C545D0 /* GoogleService-Info.plist */,
 				E8949A0722FC94AF006FB312 /* montserrat */,
 				E898B31022FC07F600C3529B /* WebServiceManager.swift */,
 				E898B30C22FBF59400C3529B /* Utility.swift */,
@@ -460,7 +457,6 @@
 				E8949A3D22FC94AF006FB312 /* MontserratAlternates-Thin.otf in Resources */,
 				E8949A3822FC94AF006FB312 /* MontserratAlternates-MediumItalic.otf in Resources */,
 				E8949A3E22FC94AF006FB312 /* Montserrat-LightItalic.otf in Resources */,
-				E86F913622FD441A00C545D0 /* GoogleService-Info.plist in Resources */,
 				E8949A4422FC94AF006FB312 /* MontserratAlternates-SemiBold.otf in Resources */,
 				E8949A4E22FC94AF006FB312 /* Montserrat-Black.otf in Resources */,
 				E8949A4922FC94AF006FB312 /* Montserrat-ExtraLightItalic.otf in Resources */,
@@ -723,17 +719,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DG7754Y75R;
+				DEVELOPMENT_TEAM = 3UVKL53YPW;
 				INFOPLIST_FILE = Phlight/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vw.Phlight;
+				PRODUCT_BUNDLE_IDENTIFIER = com.philip.Phlight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/attakhan/Desktop/Phlight/Phlight/Resources/Phlight-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/attakhan/Documents/iOS/Phlight/Phlight/Resources/Phlight-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -746,17 +742,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DG7754Y75R;
+				DEVELOPMENT_TEAM = 3UVKL53YPW;
 				INFOPLIST_FILE = Phlight/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vw.Phlight;
+				PRODUCT_BUNDLE_IDENTIFIER = com.philip.Phlight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/attakhan/Desktop/Phlight/Phlight/Resources/Phlight-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/attakhan/Documents/iOS/Phlight/Phlight/Resources/Phlight-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

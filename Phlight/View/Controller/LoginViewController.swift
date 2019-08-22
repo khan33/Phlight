@@ -55,23 +55,36 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate, GIDSignInDele
     }
     
     @IBAction func onClickGmailBtn(_ sender: UIButton) {
-        GIDSignIn.sharedInstance()?.delegate = self as! GIDSignInDelegate
-        GIDSignIn.sharedInstance()?.uiDelegate = self
-        GIDSignIn.sharedInstance()?.signIn()
+        self.showAlert(title: "Alert", message: "Sorry, This is feature is under deveopement.", controller: self
+            , dismissCompletion: {
+        })
+//        GIDSignIn.sharedInstance()?.delegate = self as! GIDSignInDelegate
+//        GIDSignIn.sharedInstance()?.uiDelegate = self
+//        GIDSignIn.sharedInstance()?.signIn()
     }
     @IBAction func onClickFbBtn(_ sender: UIButton) {
-        let fbLoginManager : LoginManager = LoginManager()
-        fbLoginManager.logIn(permissions: ["public_profile","email"], from: self) { (result, error) -> Void in
-            if (error == nil){
-                print(result?.token?.tokenString)
-                
-                let fbloginresult : LoginManagerLoginResult = result!
-                if(fbloginresult.grantedPermissions.contains("email"))
-                {
-                    self.getFBUserData()
-                }
-            }
-        }
+        
+        
+        self.showAlert(title: "Alert", message: "Sorry, This is feature is under deveopement.", controller: self
+            , dismissCompletion: {
+        })
+        
+        
+        
+        
+        
+//        let fbLoginManager : LoginManager = LoginManager()
+//        fbLoginManager.logIn(permissions: ["public_profile","email"], from: self) { (result, error) -> Void in
+//            if (error == nil){
+//                print(result?.token?.tokenString)
+//
+//                let fbloginresult : LoginManagerLoginResult = result!
+//                if(fbloginresult.grantedPermissions.contains("email"))
+//                {
+//                    self.getFBUserData()
+//                }
+//            }
+//        }
     }
     func getFBUserData(){
         if((AccessToken.current) != nil){
@@ -92,18 +105,8 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate, GIDSignInDele
             })
         }
     }
-    func SocialLogin() {
-        let params = [
-            "name": "nameTxt",
-            "email": "emailTxt",
-            "password": "",
-            "c_password": "c_passwordTxt",
-            "mobile_no": "mobileNbTxt",
-            "latitude": "",
-            "longitude": "",
-            "user_image": "",
-//            "verification_code": invitionalCode
-            ] as [String: Any]
+    func SocialLogin(_ params: Dictionary<String, AnyObject>) {
+        
         
         WebServiceManager.sharedInstance.loginRequest(params: params as Dictionary<String, AnyObject>, serviceName: SOCIAL_LOGIN, serviceType: "SOCIAL LOGIN API", modelType: UserResponse.self, success: { (response) in
             let responseObj = response as! UserResponse
@@ -161,11 +164,12 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate, GIDSignInDele
             let responseObj = response as! UserResponse
             if responseObj.status == true {
                 UserDefaults.standard.set(responseObj.user_details?.email_verified, forKey: "email_verified")
-                UserDefaults.standard.set(responseObj.user_details?.email_verified, forKey: "phone_verified")
+                UserDefaults.standard.set(responseObj.user_details?.phone_verified, forKey: "phone_verified")
                 UserDefaults.standard.set(responseObj.user_details?.email, forKey: "user_email")
                 UserDefaults.standard.set(responseObj.user_details?.mobile_number, forKey: "user_phone")
                 UserDefaults.standard.set(responseObj.user_details?.id, forKey: "user_id")
                 UserDefaults.standard.set(responseObj.user_details?.user_image, forKey: "profile_img")
+                UserDefaults.standard.set(responseObj.user_details?.name, forKey: "user_name")
                 self.launchScreen()
             } else {
                 self.showAlert(title: "Alert", message: responseObj.message ?? "Sorry, something went wrong. Please try again.", controller: self
@@ -199,9 +203,25 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate, GIDSignInDele
             print("We have a error sign in user == \(error.localizedDescription)")
         } else {
             if let gmailUser = user {
+                let userId = user.userID                  // For client-side use only!
+                let idToken = user.authentication.idToken // Safe to send to the server
+                let fullName = user.profile.name
+                let givenName = user.profile.givenName
+                let familyName = user.profile.familyName
+                let email = user.profile.email
                 print(gmailUser.profile)
                 print(gmailUser.profile.email)
                 print(gmailUser.profile.givenName)
+                let params = [
+                    "email": email,
+                    "name": fullName,
+                    "password": idToken,
+                    "latitude": "",
+                    "longitude": "",
+                    "verification_code": ""
+                    ] as [String: Any]
+                
+                SocialLogin(params as Dictionary<String, AnyObject>)
             }
         }
     }

@@ -9,13 +9,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Phlight/View/Controller/LoginViewController.swift"
-            timestampString = "588085241.786239"
+            filePath = "Phlight/View/Controller/VerifyNumberViewController.swift"
+            timestampString = "588133311.868366"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "getFBUserData()"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "onClickVerifyNumber(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Phlight/View/Controller/ConfirmEmailViewController.swift"
+            timestampString = "588136914.163193"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "onClickConfirm(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Phlight/View/Controller/UpdateProfileVC.swift"
+            timestampString = "588136914.16661"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "onClickDoneBtn(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Phlight/View/Controller/LoginViewController.swift"
-            timestampString = "588085241.786393"
+            timestampString = "588136914.166903"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "onClickFbBtn(_:)"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
+            landmarkName = "sign(_:didSignInFor:withError:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +73,61 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Phlight/Resources/WebServiceManager.swift"
-            timestampString = "588085241.786516"
+            filePath = "Phlight/View/Controller/LoginViewController.swift"
+            timestampString = "588136914.16711"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "295"
-            endingLineNumber = "295"
-            landmarkName = "multiPartImage(params:serviceName:imageParam:serviceType:profileImage:cover_image_param:cover_image:modelType:success:fail:)"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "SocialLogin(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Phlight.LoginViewController.SocialLogin(Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;) -&gt; ()"
+                  moduleName = "Phlight"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/attakhan/Documents/iOS/Phlight/Phlight/View/Controller/LoginViewController.swift"
+                  timestampString = "588139620.264196"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.AnyObject) -&gt; () in Phlight.LoginViewController.SocialLogin(Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;) -&gt; ()"
+                  moduleName = "Phlight"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/attakhan/Documents/iOS/Phlight/Phlight/View/Controller/LoginViewController.swift"
+                  timestampString = "588139620.268772"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
+                  offsetFromSymbolStart = "104">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Phlight/View/Controller/LoginViewController.swift"
+            timestampString = "588136914.167267"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "SocialLogin(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,46 +137,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Phlight/Resources/WebServiceManager.swift"
-            timestampString = "588085241.786737"
+            filePath = "Phlight/View/Controller/StoreLocationVC.swift"
+            timestampString = "588139619.693732"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261"
-            landmarkName = "multiPartImage(params:serviceName:imageParam:serviceType:profileImage:cover_image_param:cover_image:modelType:success:fail:)"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "onClickBackBtn(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Phlight.WebServiceManager.multiPartImage&lt;A where A: AnyObject, A: ObjectMapper.Mappable&gt;(params: Swift.Dictionary&lt;Swift.String, Any&gt;, serviceName: Swift.String, imageParam: Swift.String, serviceType: Swift.String, profileImage: Swift.Optional&lt;__C.UIImage&gt;, cover_image_param: Swift.String, cover_image: Swift.Optional&lt;__C.UIImage&gt;, modelType: A.Type, success: (Any) -&gt; (), fail: (__C.NSError) -&gt; ()) -&gt; ()"
-                  moduleName = "Phlight"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/attakhan/Desktop/Phlight/Phlight/Resources/WebServiceManager.swift"
-                  timestampString = "588073692.587029"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "261"
-                  endingLineNumber = "261"
-                  offsetFromSymbolStart = "773">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.MultipartFormData) -&gt; () in Phlight.WebServiceManager.multiPartImage&lt;A where A: AnyObject, A: ObjectMapper.Mappable&gt;(params: Swift.Dictionary&lt;Swift.String, Any&gt;, serviceName: Swift.String, imageParam: Swift.String, serviceType: Swift.String, profileImage: Swift.Optional&lt;__C.UIImage&gt;, cover_image_param: Swift.String, cover_image: Swift.Optional&lt;__C.UIImage&gt;, modelType: A.Type, success: (Any) -&gt; (), fail: (__C.NSError) -&gt; ()) -&gt; ()"
-                  moduleName = "Phlight"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/attakhan/Desktop/Phlight/Phlight/Resources/WebServiceManager.swift"
-                  timestampString = "588073692.589126"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "262"
-                  endingLineNumber = "262"
-                  offsetFromSymbolStart = "215">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
